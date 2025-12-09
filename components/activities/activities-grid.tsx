@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Star, Clock, Users, Heart, MapPin } from "lucide-react"
+import { Star, Clock, Users, Heart, MapPin, ChevronDown } from "lucide-react"
 
 const activities = [
   {
@@ -120,16 +120,19 @@ export function ActivitiesGrid() {
   return (
     <section className="py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <p className="text-foreground/70">
             <span className="font-semibold text-foreground">{activities.length} activités</span> disponibles
           </p>
-          <select className="px-4 py-2 rounded-full border border-pink bg-white text-foreground text-sm outline-none focus:border-coral">
-            <option>Les plus populaires</option>
-            <option>Prix croissant</option>
-            <option>Prix décroissant</option>
-            <option>Mieux notées</option>
-          </select>
+          <div className="relative w-full sm:w-auto">
+            <select className="w-full appearance-none px-5 py-3 rounded-full border border-pink text-foreground text-sm bg-white outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-colors pr-10">
+              <option>Les plus populaires</option>
+              <option>Prix croissant</option>
+              <option>Prix décroissant</option>
+              <option>Mieux notées</option>
+            </select>
+            <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-foreground/60 w-4 h-4 pointer-events-none" />
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

@@ -34,48 +34,51 @@ export default function ActivitesLocalesPage() {
     <main className="min-h-screen bg-cream">
       <Header />
 
-      <section className="pt-20 pb-10 md:pt-28 md:pb-16 bg-white/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2 items-center">
-            <div>
-              <p className="text-xs font-semibold text-coral uppercase tracking-[0.35em]">Activités locales</p>
-              <h1 className="mt-3 text-3xl md:text-4xl font-bold text-foreground leading-snug">
-                Vivez la ville <span className="text-coral">avec ceux qui y vivent</span>
-              </h1>
-              <p className="mt-3 text-base md:text-lg text-foreground/70">
-                Ateliers, balades, repas partagés, immersions culturelles... Sélectionnez une activité créée par un hôte
-                GOYAGE et découvrez les coulisses d'une destination.
-              </p>
-              <div className="mt-5 flex flex-col sm:flex-row gap-3">
-                <Button className="rounded-full px-6 py-4 h-auto text-sm md:text-base font-semibold bg-coral hover:bg-coral/90">
-                  Voir les activités proches
-                </Button>
-                <Button
-                  variant="outline"
-                  className="rounded-full px-6 py-4 h-auto text-sm md:text-base font-semibold border-coral text-coral hover:bg-coral hover:text-white bg-transparent"
-                >
-                  Proposer la vôtre
-                </Button>
-              </div>
-            </div>
-            <div className="rounded-3xl bg-white/80 p-4 md:p-5 border border-pink/40 shadow-xl grid gap-3 sm:grid-cols-2">
-              {immersionHighlights.map((highlight) => {
-                const Icon = highlight.icon
-                return (
-                  <div key={highlight.title} className="rounded-2xl bg-cream/70 p-3">
-                    <Icon className="w-5 h-5 text-coral" />
-                    <h3 className="mt-2 text-sm font-semibold text-foreground">{highlight.title}</h3>
-                    <p className="text-xs text-foreground/70 mt-1">{highlight.description}</p>
+      <section className="pt-24 md:pt-32 pb-16 bg-gradient-to-b from-pink/30 to-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+          <div className="inline-flex items-center gap-2 bg-coral/10 text-coral px-4 py-2 rounded-full mb-6">
+            <Sparkles className="w-5 h-5" />
+            <span className="font-medium">Immersions locales garanties</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            Activités locales <span className="text-coral">GOYAGE</span>
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-foreground/70">
+            Ateliers, balades, repas partagés, immersions culturelles... Vivez la ville avec ceux qui y vivent.
+          </p>
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+            <Button asChild className="rounded-full px-8 py-6 text-lg font-semibold bg-coral hover:bg-coral/90">
+              <a href="#activites-locales-grid">Voir les activités</a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full px-8 py-6 text-lg font-semibold border-coral text-coral hover:bg-coral hover:text-white bg-transparent"
+            >
+              <a href="/connexion">Proposer la vôtre</a>
+            </Button>
+          </div>
+          <div className="mt-12 grid sm:grid-cols-2 gap-4">
+            {immersionHighlights.map((highlight) => {
+              const Icon = highlight.icon
+              return (
+                <div key={highlight.title} className="rounded-2xl bg-white/80 p-4 border border-pink/30 shadow-sm flex gap-3 text-left">
+                  <Icon className="w-5 h-5 text-coral flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-foreground">{highlight.title}</p>
+                    <p className="text-sm text-foreground/70">{highlight.description}</p>
                   </div>
-                )
-              })}
-            </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
       <ActivitiesCategories />
-      <ActivitiesGrid />
+      <div id="activites-locales-grid">
+        <ActivitiesGrid />
+      </div>
 
       <section className="py-16 md:py-24 bg-white/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

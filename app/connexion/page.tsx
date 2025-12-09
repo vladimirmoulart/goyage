@@ -127,16 +127,11 @@ export default function ConnexionPage() {
               </form>
 
               <div className="mt-8 rounded-2xl bg-cream/70 p-5 text-center">
-                <p className="text-sm text-foreground/70">
-                  Nouveau sur GOYAGE ?
-                  <Link href="/devenir-hote" className="text-coral font-semibold ml-1 hover:underline">
-                    Créez votre compte hôte
-                  </Link>
-                </p>
+                <p className="text-sm text-foreground/70">Nouveau sur GOYAGE ?</p>
                 <Button asChild variant="ghost" className="mt-4 text-coral font-semibold hover:text-coral/80">
                   <Link href="/inscription">
                     <ArrowRight className="w-4 h-4 mr-1" />
-                    Voir les options d'inscription
+                    Créer un compte
                   </Link>
                 </Button>
               </div>

@@ -29,7 +29,7 @@ export function ActivitiesCta() {
             variant="outline"
             className="border-coral text-coral hover:bg-coral hover:text-white rounded-full px-8 py-6 text-lg h-auto bg-transparent"
           >
-            <Link href="/comment-ca-marche">En savoir plus</Link>
+            <Link href="/faq">En savoir plus</Link>
           </Button>
         </div>
       </div>

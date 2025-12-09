@@ -1,6 +1,7 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Search, MapPin, Calendar, Users } from "lucide-react"
-
+import { HeroVisual } from "@/components/hero-visual"
 export function HeroSection() {
   return (
     <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
@@ -23,70 +24,55 @@ export function HeroSection() {
             {/* Dual CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
+                asChild
                 size="lg"
                 className="bg-coral hover:bg-coral/90 text-white rounded-full px-8 py-6 text-lg font-semibold shadow-lg shadow-coral/30"
               >
-                Je veux explorer
+                <Link href="/connexion">Je veux explorer</Link>
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-2 border-green bg-green/10 text-foreground hover:bg-green hover:text-foreground rounded-full px-8 py-6 text-lg font-semibold"
               >
-                Je veux accueillir
+                <Link href="/connexion">Je veux accueillir</Link>
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="mt-12 flex flex-wrap gap-8 justify-center lg:justify-start">
-              <div className="text-center">
-                <p className="text-3xl font-bold text-coral">2,500+</p>
-                <p className="text-sm text-foreground/70">Expériences uniques</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-bold text-green">150+</p>
-                <p className="text-sm text-foreground/70">Destinations</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-bold text-coral">50,000+</p>
-                <p className="text-sm text-foreground/70">Voyageurs heureux</p>
-              </div>
+            {/* Store badges */}
+            <div className="mt-8 lg:mt-12 flex flex-wrap gap-4 justify-center lg:justify-start">
+              <Link
+                href="#"
+                className="inline-flex items-center gap-3 bg-black text-white rounded-2xl px-5 py-3 hover:opacity-90 transition-opacity"
+              >
+                <span className="text-4xl"></span>
+                <div className="text-left leading-tight">
+                  <p className="text-[9px] uppercase tracking-wide">Disponible sur</p>
+                  <p className="text-lg font-semibold">App Store</p>
+                </div>
+              </Link>
+              <Link
+                href="#"
+                className="inline-flex items-center gap-3 bg-black text-white rounded-2xl px-5 py-3 hover:opacity-90 transition-opacity"
+              >
+                <img src="/play-store.webp" alt="Disponible sur Google Play" className="h-8 w-auto" />
+                <div className="text-left leading-tight">
+                  <p className="text-[9px] uppercase tracking-wide">Disponible sur</p>
+                  <p className="text-lg font-semibold">Google Play</p>
+                </div>
+              </Link>
             </div>
           </div>
 
-          {/* Right Content - Hero Image */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="/happy-travelers-sharing-meal-with-local-host-famil.jpg"
-                alt="Voyageurs partageant un repas avec une famille locale"
-                className="w-full h-[400px] md:h-[500px] object-cover"
-              />
-              {/* Floating Card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <img src="/friendly-woman-portrait-smiling.jpg" alt="Maria" className="w-12 h-12 rounded-full object-cover" />
-                  <div className="flex-1">
-                    <p className="font-semibold text-foreground">Cours de cuisine avec Maria</p>
-                    <p className="text-sm text-foreground/70">Lisbonne, Portugal</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-bold text-coral">45€</p>
-                    <p className="text-xs text-foreground/70">par personne</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative badges */}
-            <div className="absolute -top-4 -right-4 bg-green text-foreground px-4 py-2 rounded-full font-semibold shadow-lg">
-              Vérifié GOYAGE
-            </div>
+          {/* Right Content - Hero Visual */}
+          <div className="relative hidden lg:block">
+            <HeroVisual />
           </div>
         </div>
 
         {/* Search Bar */}
-        <div className="mt-16 bg-white rounded-2xl shadow-xl p-4 md:p-6 max-w-4xl mx-auto">
+        <div className="mt-10 lg:mt-16 bg-white rounded-2xl shadow-xl p-4 md:p-6 max-w-4xl mx-auto">
           <div className="grid md:grid-cols-4 gap-4">
             <div className="flex items-center gap-3 p-3 rounded-xl bg-cream/50">
               <MapPin className="w-5 h-5 text-coral" />

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Star, Clock, Users, Heart, ArrowRight } from "lucide-react"
 
@@ -69,9 +70,15 @@ export function FeaturedExperiences() {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Expériences populaires</h2>
             <p className="mt-3 text-lg text-foreground/70">Des moments uniques sélectionnés par notre communauté.</p>
           </div>
-          <Button variant="ghost" className="text-coral hover:text-coral/80 font-semibold self-start md:self-auto">
-            Voir toutes les expériences
-            <ArrowRight className="w-4 h-4 ml-2" />
+          <Button
+            asChild
+            variant="ghost"
+            className="text-coral hover:text-coral/80 font-semibold self-start md:self-auto"
+          >
+            <Link href="/activites-locales">
+              Voir toutes les expériences
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
           </Button>
         </div>
 

@@ -57,8 +57,8 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="text-2xl font-bold text-coral">
-              GOYAGE
+            <Link href="/" className="inline-flex items-center">
+              <img src="/logo-goyage.png" alt="GOYAGE" className="h-14 w-auto object-contain" />
             </Link>
             <p className="mt-4 text-white/70 text-sm">Voyagez autrement, vivez vraiment.</p>
             <div className="flex gap-4 mt-6">

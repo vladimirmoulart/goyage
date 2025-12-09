@@ -20,7 +20,7 @@ export function ActivitiesCategories() {
   return (
     <section className="py-8 border-b border-pink/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide">
+        <div className="flex overflow-x-auto gap-3 pb-2 scrollbar-hide justify-center">
           {categories.map((category) => {
             const Icon = category.icon
             return (
