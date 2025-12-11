@@ -1,120 +1,8 @@
 import Link from "next/link"
-import { Star, Clock, Users, Heart, MapPin, ChevronDown } from "lucide-react"
+import { Star, Clock, Users, Heart, MapPin, ChevronDown, CalendarDays } from "lucide-react"
+import { activitiesData } from "@/lib/activities"
 
-const activities = [
-  {
-    id: 1,
-    title: "Atelier poterie traditionnelle",
-    location: "Marrakech, Maroc",
-    host: "Ahmed",
-    hostImage: "/moroccan-man-artisan-smiling-portrait.jpg",
-    image: "/pottery-workshop-morocco-traditional-crafts-hands-.jpg",
-    price: 35,
-    rating: 4.9,
-    reviews: 127,
-    duration: "3h",
-    maxGuests: 6,
-    category: "Artisanat",
-  },
-  {
-    id: 2,
-    title: "Randonnée et pique-nique local",
-    location: "Cinque Terre, Italie",
-    host: "Lucia",
-    hostImage: "/italian-woman-hiking-guide-smiling.jpg",
-    image: "/hiking-cinque-terre-italy-coastal-view-picnic-natu.jpg",
-    price: 55,
-    rating: 4.8,
-    reviews: 89,
-    duration: "5h",
-    maxGuests: 8,
-    category: "Nature",
-  },
-  {
-    id: 3,
-    title: "Cours de tango argentin",
-    location: "Buenos Aires, Argentine",
-    host: "Carlos",
-    hostImage: "/argentine-man-tango-dancer-portrait.jpg",
-    image: "/tango-dance-lesson-buenos-aires-argentina-couple.jpg",
-    price: 40,
-    rating: 5.0,
-    reviews: 203,
-    duration: "2h",
-    maxGuests: 10,
-    category: "Culture",
-  },
-  {
-    id: 4,
-    title: "Street food tour nocturne",
-    location: "Bangkok, Thaïlande",
-    host: "Niran",
-    hostImage: "/thai-man-chef-smiling-portrait.jpg",
-    image: "/bangkok-street-food-night-market-tour-thailand.jpg",
-    price: 30,
-    rating: 4.9,
-    reviews: 156,
-    duration: "4h",
-    maxGuests: 8,
-    category: "Gastronomie",
-  },
-  {
-    id: 5,
-    title: "Cours de cuisine japonaise",
-    location: "Kyoto, Japon",
-    host: "Yuki",
-    hostImage: "/japanese-woman-chef-traditional-smiling.jpg",
-    image: "/placeholder.svg?height=400&width=600",
-    price: 65,
-    rating: 4.9,
-    reviews: 178,
-    duration: "4h",
-    maxGuests: 6,
-    category: "Gastronomie",
-  },
-  {
-    id: 6,
-    title: "Safari photo au lever du soleil",
-    location: "Le Cap, Afrique du Sud",
-    host: "David",
-    hostImage: "/placeholder.svg?height=100&width=100",
-    image: "/placeholder.svg?height=400&width=600",
-    price: 85,
-    rating: 4.8,
-    reviews: 94,
-    duration: "6h",
-    maxGuests: 4,
-    category: "Photo",
-  },
-  {
-    id: 7,
-    title: "Yoga sur la plage",
-    location: "Bali, Indonésie",
-    host: "Made",
-    hostImage: "/placeholder.svg?height=100&width=100",
-    image: "/placeholder.svg?height=400&width=600",
-    price: 25,
-    rating: 4.9,
-    reviews: 231,
-    duration: "1h30",
-    maxGuests: 12,
-    category: "Bien-être",
-  },
-  {
-    id: 8,
-    title: "Tour en vélo vintage",
-    location: "Lisbonne, Portugal",
-    host: "Miguel",
-    hostImage: "/placeholder.svg?height=100&width=100",
-    image: "/placeholder.svg?height=400&width=600",
-    price: 45,
-    rating: 4.7,
-    reviews: 112,
-    duration: "3h",
-    maxGuests: 8,
-    category: "Aventure",
-  },
-]
+const activities = Object.values(activitiesData)
 
 export function ActivitiesGrid() {
   return (
@@ -171,8 +59,17 @@ export function ActivitiesGrid() {
                   {activity.title}
                 </h3>
                 <p className="text-sm text-foreground/60 mt-1 flex items-center gap-1">
+                  {activity.flag && (
+                    <span className="text-base" role="img" aria-label={`Drapeau ${activity.location}`}>
+                      {activity.flag}
+                    </span>
+                  )}
                   <MapPin className="w-3 h-3" />
                   {activity.location}
+                </p>
+                <p className="text-sm text-foreground/60 mt-1 flex items-center gap-1">
+                  <CalendarDays className="w-3 h-3" />
+                  {activity.date}
                 </p>
 
                 <div className="flex items-center gap-4 mt-3 text-sm text-foreground/70">
@@ -182,7 +79,7 @@ export function ActivitiesGrid() {
                   </span>
                   <span className="flex items-center gap-1">
                     <Users className="w-4 h-4" />
-                    Max {activity.maxGuests}
+                    {activity.bookedGuests}/{activity.maxGuests} personnes
                   </span>
                 </div>
 

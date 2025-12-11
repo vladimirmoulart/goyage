@@ -9,6 +9,7 @@ const experiences = [
     image: "/placeholder.svg?height=300&width=400",
     duration: "3h",
     maxGuests: 6,
+    bookedGuests: 3,
     location: "Médina de Marrakech",
     host: "Ahmed",
     hostImage: "/placeholder.svg?height=100&width=100",
@@ -22,6 +23,7 @@ const experiences = [
     image: "/placeholder.svg?height=300&width=400",
     duration: "4h",
     maxGuests: 8,
+    bookedGuests: 5,
     location: "Riad familial",
     host: "Fatima",
     hostImage: "/placeholder.svg?height=100&width=100",
@@ -35,6 +37,7 @@ const experiences = [
     image: "/placeholder.svg?height=300&width=400",
     duration: "2h30",
     maxGuests: 10,
+    bookedGuests: 7,
     location: "Souks de Marrakech",
     host: "Youssef",
     hostImage: "/placeholder.svg?height=100&width=100",
@@ -48,6 +51,7 @@ const experiences = [
     image: "/placeholder.svg?height=300&width=400",
     duration: "1h30",
     maxGuests: 6,
+    bookedGuests: 2,
     location: "Maison traditionnelle",
     host: "Khadija",
     hostImage: "/placeholder.svg?height=100&width=100",
@@ -109,7 +113,7 @@ export function BoxExperiences() {
                   </span>
                   <span className="flex items-center gap-1">
                     <Users className="w-4 h-4" />
-                    Max {exp.maxGuests} pers.
+                    {exp.bookedGuests}/{exp.maxGuests} personnes
                   </span>
                   <span className="flex items-center gap-1">
                     <MapPin className="w-4 h-4" />

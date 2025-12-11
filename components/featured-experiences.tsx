@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Star, Clock, Users, Heart, ArrowRight } from "lucide-react"
+import { Star, Clock, Users, Heart, ArrowRight, MapPin, CalendarDays } from "lucide-react"
 
 const experiences = [
   {
     id: 1,
     title: "Atelier poterie traditionnelle",
     location: "Marrakech, Maroc",
+    flag: "🇲🇦",
     host: "Ahmed",
     hostImage: "/moroccan-man-artisan-smiling-portrait.jpg",
     image: "/pottery-workshop-morocco-traditional-crafts.jpg",
@@ -15,12 +16,15 @@ const experiences = [
     reviews: 127,
     duration: "3h",
     maxGuests: 6,
+    bookedGuests: 3,
+    date: "Samedi 18 mai",
     category: "Artisanat",
   },
   {
     id: 2,
     title: "Randonnée et pique-nique local",
     location: "Cinque Terre, Italie",
+    flag: "🇮🇹",
     host: "Lucia",
     hostImage: "/italian-woman-hiking-guide-smiling.jpg",
     image: "/hiking-cinque-terre-italy-coastal-view-picnic.jpg",
@@ -29,35 +33,43 @@ const experiences = [
     reviews: 89,
     duration: "5h",
     maxGuests: 8,
+    bookedGuests: 5,
+    date: "Dimanche 19 mai",
     category: "Nature",
   },
   {
     id: 3,
-    title: "Cours de tango argentin",
-    location: "Buenos Aires, Argentine",
-    host: "Carlos",
-    hostImage: "/argentine-man-tango-dancer-portrait.jpg",
-    image: "/tango-dance-lesson-buenos-aires-argentina.jpg",
-    price: 40,
-    rating: 5.0,
-    reviews: 203,
-    duration: "2h",
+    title: "Tapas & marché de la Boqueria",
+    location: "Barcelone, Espagne",
+    flag: "🇪🇸",
+    host: "Javier",
+    hostImage: "/german-man-backpacker-smiling-portrait.jpg",
+    image: "/happy-travelers-sharing-meal-with-local-host-famil.jpg",
+    price: 48,
+    rating: 4.8,
+    reviews: 168,
+    duration: "3h30",
     maxGuests: 10,
-    category: "Culture",
+    bookedGuests: 4,
+    date: "Jeudi 23 mai",
+    category: "Gastronomie",
   },
   {
     id: 4,
-    title: "Street food tour nocturne",
-    location: "Bangkok, Thaïlande",
-    host: "Niran",
-    hostImage: "/thai-man-chef-smiling-portrait.jpg",
-    image: "/bangkok-street-food-night-market-tour.jpg",
-    price: 30,
+    title: "Snorkeling tortues & coraux",
+    location: "Praslin, Seychelles",
+    flag: "🇸🇨",
+    host: "Aline",
+    hostImage: "/friendly-woman-portrait-smiling.jpg",
+    image: "/tortue.png",
+    price: 75,
     rating: 4.9,
-    reviews: 156,
-    duration: "4h",
-    maxGuests: 8,
-    category: "Gastronomie",
+    reviews: 101,
+    duration: "3h30",
+    maxGuests: 6,
+    bookedGuests: 2,
+    date: "Lundi 27 mai",
+    category: "Nature",
   },
 ]
 
@@ -114,16 +126,29 @@ export function FeaturedExperiences() {
                   <span className="text-sm text-foreground/70">avec {exp.host}</span>
                 </div>
                 <h3 className="font-semibold text-foreground group-hover:text-coral transition-colors">{exp.title}</h3>
-                <p className="text-sm text-foreground/60 mt-1">{exp.location}</p>
+                <p className="text-sm text-foreground/60 mt-1 flex items-center gap-1">
+                  {exp.flag && (
+                    <span className="text-base" role="img" aria-label={`Drapeau ${exp.location}`}>
+                      {exp.flag}
+                    </span>
+                  )}
+                  <MapPin className="w-3 h-3" />
+                  {exp.location}
+                </p>
 
-                <div className="flex items-center gap-4 mt-3 text-sm text-foreground/70">
+                <p className="text-xs text-foreground/60 mt-1 flex items-center gap-1">
+                  <CalendarDays className="w-3 h-3" />
+                  {exp.date}
+                </p>
+
+                <div className="flex items-center gap-4 mt-2 text-sm text-foreground/70">
                   <span className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />
                     {exp.duration}
                   </span>
                   <span className="flex items-center gap-1">
                     <Users className="w-4 h-4" />
-                    Max {exp.maxGuests}
+                    {exp.bookedGuests}/{exp.maxGuests} personnes
                   </span>
                 </div>
 

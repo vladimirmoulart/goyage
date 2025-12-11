@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button"
 
 interface DestinationHostsProps {
   destinationName: string
+  locationLabel?: string
 }
 
 const hosts = [
   {
     id: 1,
     name: "Ahmed",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/moroccan-man-artisan-smiling-portrait.jpg",
     specialty: "Artisan potier",
     rating: 4.9,
     reviews: 127,
@@ -20,7 +21,7 @@ const hosts = [
   {
     id: 2,
     name: "Fatima",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/friendly-woman-portrait-smiling.jpg",
     specialty: "Cuisinière passionnée",
     rating: 4.8,
     reviews: 89,
@@ -30,7 +31,7 @@ const hosts = [
   {
     id: 3,
     name: "Hassan",
-    image: "/placeholder.svg?height=200&width=200",
+    image: "/german-man-backpacker-smiling-portrait.jpg",
     specialty: "Maître calligraphe",
     rating: 5.0,
     reviews: 64,
@@ -39,13 +40,15 @@ const hosts = [
   },
 ]
 
-export function DestinationHosts({ destinationName }: DestinationHostsProps) {
+export function DestinationHosts({ destinationName, locationLabel }: DestinationHostsProps) {
+  const highlightedLocation = locationLabel || `à ${destinationName}`
+
   return (
     <section className="py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Nos hôtes à {destinationName}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Nos hôtes {highlightedLocation}</h2>
             <p className="mt-2 text-foreground/70">Des passionnés prêts à partager leur culture et leurs traditions.</p>
           </div>
           <Button variant="ghost" className="text-coral hover:text-coral/80 font-semibold self-start md:self-auto">

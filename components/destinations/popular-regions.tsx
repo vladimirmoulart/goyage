@@ -3,28 +3,34 @@ import { ArrowRight } from "lucide-react"
 
 const regions = [
   {
-    name: "Méditerranée",
-    countries: ["Espagne", "Italie", "Grèce", "Croatie"],
+    name: "Immersion au Maroc",
+    countries: ["Marrakech", "Atlas", "Désert d'Agafay"],
+    image: "/marrakech-morocco-medina-colorful-market.jpg",
+    color: "from-coral/80",
+  },
+  {
+    name: "Escapades en Italie",
+    countries: ["Cinque Terre", "Toscane", "Pouilles"],
+    image: "/cinque-terre-italy-colorful-coastal-villages.jpg",
+    color: "from-green/80",
+  },
+  {
+    name: "Dolce farniente en Espagne",
+    countries: ["Séville", "Barcelone", "Baléares"],
     image: "/mediterranean-sea-coastal-village-sunset.jpg",
     color: "from-coral/80",
   },
   {
-    name: "Asie du Sud-Est",
-    countries: ["Thaïlande", "Vietnam", "Indonésie", "Cambodge"],
-    image: "/southeast-asia-temple-rice-fields-tropical.jpg",
+    name: "Retraites à Bali",
+    countries: ["Ubud", "Canggu", "Uluwatu"],
+    image: "/bali-rice-terraces-temple-spiritual.jpg",
     color: "from-green/80",
   },
   {
-    name: "Amérique Latine",
-    countries: ["Mexique", "Pérou", "Argentine", "Colombie"],
-    image: "/latin-america-colorful-streets-culture.jpg",
+    name: "Îles des Seychelles",
+    countries: ["Mahé", "Praslin", "La Digue"],
+    image: "/travel-experience-adventure-colorful.jpg",
     color: "from-coral/80",
-  },
-  {
-    name: "Afrique du Nord",
-    countries: ["Maroc", "Tunisie", "Égypte"],
-    image: "/north-africa-morocco-desert-medina.jpg",
-    color: "from-green/80",
   },
 ]
 

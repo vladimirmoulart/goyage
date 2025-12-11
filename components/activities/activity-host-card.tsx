@@ -1,5 +1,5 @@
 import { ActivityDetail } from "@/lib/activities"
-import { MessageCircle } from "lucide-react"
+import { CalendarCheck } from "lucide-react"
 
 interface Props {
   activity: ActivityDetail
@@ -17,8 +17,8 @@ export function ActivityHostCard({ activity }: Props) {
         <p className="text-sm text-foreground/60">{activity.language}</p>
         <p className="text-sm text-foreground/70">Niveau conseillé : {activity.level}</p>
         <button className="mt-4 w-full rounded-full border border-coral text-coral px-4 py-3 font-semibold hover:bg-coral hover:text-white transition-colors flex items-center justify-center gap-2">
-          <MessageCircle className="w-4 h-4" />
-          Contacter {activity.host}
+          <CalendarCheck className="w-4 h-4" />
+          Réserver cette expérience
         </button>
       </div>
     </div>

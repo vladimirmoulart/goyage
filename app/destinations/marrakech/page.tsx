@@ -36,7 +36,7 @@ export default function DestinationMarrakechPage() {
       <Header />
       <DestinationDetailHero destination={destination} />
       <DestinationAbout destination={destination} />
-      <DestinationExperiences destinationName={destination.name} />
+      <DestinationExperiences destinationName={destination.name} destinationId={destination.id} />
       <DestinationHosts destinationName={destination.name} />
       <DestinationPractical destination={destination} />
       <Footer />

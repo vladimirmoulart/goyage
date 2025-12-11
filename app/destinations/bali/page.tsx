@@ -15,8 +15,12 @@ export default function DestinationBaliPage() {
       <Header />
       <DestinationDetailHero destination={destination} />
       <DestinationAbout destination={destination} />
-      <DestinationExperiences destinationName={destination.name} />
-      <DestinationHosts destinationName={destination.name} />
+      <DestinationExperiences
+        destinationName={destination.name}
+        locationLabel={destination.locationLabel}
+        destinationId={destination.id}
+      />
+      <DestinationHosts destinationName={destination.name} locationLabel={destination.locationLabel} />
       <DestinationPractical destination={destination} />
       <Footer />
     </main>

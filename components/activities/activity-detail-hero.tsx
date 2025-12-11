@@ -1,4 +1,4 @@
-import { MapPin, Star, Users, Clock, Heart } from "lucide-react"
+import { MapPin, Star, Users, Clock, Heart, CalendarDays } from "lucide-react"
 import { ActivityDetail } from "@/lib/activities"
 
 interface Props {
@@ -13,8 +13,17 @@ export function ActivityDetailHero({ activity }: Props) {
           <p className="text-sm font-semibold text-coral uppercase">{activity.category}</p>
           <h1 className="mt-4 text-4xl md:text-5xl font-bold text-foreground leading-tight">{activity.title}</h1>
           <p className="mt-3 text-foreground/70 flex items-center gap-2">
+            {activity.flag && (
+              <span className="text-2xl leading-none" role="img" aria-label={`Drapeau ${activity.location}`}>
+                {activity.flag}
+              </span>
+            )}
             <MapPin className="w-4 h-4 text-coral" />
             {activity.location}
+          </p>
+          <p className="mt-3 text-foreground/70 flex items-center gap-2">
+            <CalendarDays className="w-4 h-4 text-green" />
+            {activity.date}
           </p>
           <p className="mt-4 text-lg text-foreground/80">{activity.shortDescription}</p>
 
@@ -25,7 +34,7 @@ export function ActivityDetailHero({ activity }: Props) {
             </span>
             <span className="flex items-center gap-1">
               <Users className="w-4 h-4 text-green" />
-              Max {activity.maxGuests} pers.
+              {activity.bookedGuests}/{activity.maxGuests} personnes
             </span>
             <span className="flex items-center gap-1">
               <Star className="w-4 h-4 fill-coral text-coral" />
