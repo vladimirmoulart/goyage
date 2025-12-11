@@ -1,40 +1,10 @@
 import Link from "next/link"
 import { Gift, Star } from "lucide-react"
+import { boxesList } from "@/lib/boxes"
 
-const similarBoxes = [
-  {
-    id: "italie-dolce-vita",
-    name: "Box Italie Dolce Vita",
-    country: "Italie",
-    flag: "🇮🇹",
-    image: "/placeholder.svg?height=300&width=400",
-    price: 179,
-    rating: 4.8,
-    experiencesCount: 4,
-  },
-  {
-    id: "grece-antique",
-    name: "Box Grèce Antique",
-    country: "Grèce",
-    flag: "🇬🇷",
-    image: "/placeholder.svg?height=300&width=400",
-    price: 169,
-    rating: 4.8,
-    experiencesCount: 4,
-  },
-  {
-    id: "portugal-saudade",
-    name: "Box Portugal Saudade",
-    country: "Portugal",
-    flag: "🇵🇹",
-    image: "/placeholder.svg?height=300&width=400",
-    price: 149,
-    rating: 4.9,
-    experiencesCount: 4,
-  },
-]
+export function BoxSimilar({ currentBoxId }: { currentBoxId: string }) {
+  const similarBoxes = boxesList.filter((box) => box.id !== currentBoxId).slice(0, 3)
 
-export function BoxSimilar() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

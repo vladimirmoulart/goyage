@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { ChatWidget } from "@/components/chat/chat-widget"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className={`font-sans antialiased ${poppins.className}`}>
         {children}
+        <ChatWidget />
         <Analytics />
       </body>
     </html>

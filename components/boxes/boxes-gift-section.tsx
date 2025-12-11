@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function BoxesGiftSection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-coral to-pink">
+    <section id="gift-section" className="py-20 bg-gradient-to-r from-coral to-pink">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-white">
@@ -42,8 +42,11 @@ export function BoxesGiftSection() {
               </div>
             </div>
 
-            <Button className="bg-white text-coral hover:bg-white/90 rounded-full px-8 py-6 text-lg font-semibold">
-              Offrir une Box GOYAGE
+            <Button
+              asChild
+              className="bg-white text-coral hover:bg-white/90 rounded-full px-8 py-6 text-lg font-semibold"
+            >
+              <a href="#boxes-destinations">Offrir une Box GOYAGE</a>
             </Button>
           </div>
 

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Gift, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -21,16 +22,24 @@ export function BoxesHero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button className="bg-coral hover:bg-coral/90 text-white rounded-full px-8 py-6 text-lg font-semibold">
-              <Gift className="w-5 h-5 mr-2" />
-              Offrir une Box
+            <Button
+              asChild
+              className="bg-coral hover:bg-coral/90 text-white rounded-full px-8 py-6 text-lg font-semibold"
+            >
+              <Link href="#gift-section">
+                <Gift className="w-5 h-5 mr-2" />
+                Offrir une Box
+              </Link>
             </Button>
             <Button
+              asChild
               variant="outline"
               className="border-coral text-coral hover:bg-coral hover:text-white rounded-full px-8 py-6 text-lg font-semibold bg-transparent"
             >
-              <Sparkles className="w-5 h-5 mr-2" />
-              Voir toutes les Box
+              <Link href="#boxes-destinations">
+                <Sparkles className="w-5 h-5 mr-2" />
+                Voir toutes les Box
+              </Link>
             </Button>
           </div>
         </div>
@@ -38,11 +47,7 @@ export function BoxesHero() {
         {/* Floating boxes preview */}
         <div className="mt-16 grid grid-cols-3 gap-4 max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl p-4 shadow-lg transform -rotate-3 hover:rotate-0 transition-transform">
-            <img
-              src="/morocco-travel-box-gift-colorful.jpg"
-              alt="Box Maroc"
-              className="w-full h-32 object-cover rounded-xl mb-3"
-            />
+            <img src="/maroc.png" alt="Box Maroc" className="w-full h-32 object-cover rounded-xl mb-3" />
             <p className="font-semibold text-foreground text-sm">Box Maroc</p>
             <p className="text-coral font-bold">149€</p>
           </div>

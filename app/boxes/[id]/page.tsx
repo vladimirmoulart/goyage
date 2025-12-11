@@ -19,18 +19,18 @@ export default async function BoxDetailPage({ params }: { params: Promise<{ id: 
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[minmax(0,1fr)_360px] gap-10">
           <div className="space-y-12">
-            <BoxExperiences />
-            <BoxHosts />
+            <BoxExperiences boxId={id} />
+            <BoxHosts boxId={id} />
             <BoxReviews />
             <BoxFaq />
           </div>
           <div className="lg:sticky lg:top-28">
-            <BoxBookingCard />
+            <BoxBookingCard boxId={id} />
           </div>
         </div>
       </section>
 
-      <BoxSimilar />
+      <BoxSimilar currentBoxId={id} />
       <Footer />
     </main>
   )

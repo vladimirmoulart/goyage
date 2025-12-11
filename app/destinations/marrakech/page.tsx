@@ -11,7 +11,7 @@ const destination = {
   name: "Marrakech",
   country: "Maroc",
   continent: "Afrique",
-  heroImage: "/marrakech-morocco-medina-colorful-market.jpg",
+  heroImage: "/maroc.png",
   description: "Laissez-vous envoûter par les souks, les riads et la magie de la médina.",
   longDescription:
     "Marrakech, la ville rouge, est une destination qui éveille tous les sens. Des ruelles sinueuses de la médina aux jardins luxuriants, en passant par la célèbre place Jemaa el-Fna, chaque coin de rue révèle une nouvelle surprise. Nos hôtes locaux vous feront découvrir les secrets les mieux gardés de cette ville millénaire.",

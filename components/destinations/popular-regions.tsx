@@ -5,7 +5,7 @@ const regions = [
   {
     name: "Immersion au Maroc",
     countries: ["Marrakech", "Atlas", "Désert d'Agafay"],
-    image: "/marrakech-morocco-medina-colorful-market.jpg",
+    image: "/maroc.png",
     color: "from-coral/80",
   },
   {
@@ -29,7 +29,7 @@ const regions = [
   {
     name: "Îles des Seychelles",
     countries: ["Mahé", "Praslin", "La Digue"],
-    image: "/travel-experience-adventure-colorful.jpg",
+    image: "/seychelles.png",
     color: "from-coral/80",
   },
 ]

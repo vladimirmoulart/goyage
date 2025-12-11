@@ -23,7 +23,7 @@ export const destinationDetailData: Record<string, DestinationDetail> = {
     name: "Seychelles",
     country: "Seychelles",
     continent: "Océan Indien",
-    heroImage: "/travel-experience-adventure-colorful.jpg",
+    heroImage: "/seychelles.png",
     locationLabel: "aux Seychelles",
     description: "Lagons turquoise, granit sculpté et art de vivre créole.",
     longDescription:
@@ -47,7 +47,7 @@ export const destinationDetailData: Record<string, DestinationDetail> = {
     name: "Maroc",
     country: "Maroc",
     continent: "Afrique",
-    heroImage: "/marrakech-morocco-medina-colorful-market.jpg",
+    heroImage: "/maroc.png",
     locationLabel: "au Maroc",
     description: "Riads secrets, dunes dorées et hospitalité berbère.",
     longDescription:

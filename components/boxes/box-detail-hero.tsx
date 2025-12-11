@@ -1,46 +1,8 @@
 import { MapPin, Star, Gift, Clock, Users, Shield } from "lucide-react"
+import { boxesData, BoxData } from "@/lib/boxes"
 
-const boxesData: Record<
-  string,
-  {
-    name: string
-    country: string
-    flag: string
-    image: string
-    rating: number
-    reviews: number
-    experiencesCount: number
-    description: string
-    longDescription: string
-  }
-> = {
-  "maroc-authentique": {
-    name: "Box Maroc Authentique",
-    country: "Maroc",
-    flag: "🇲🇦",
-    image: "/morocco-marrakech-medina-colorful-market.jpg",
-    rating: 4.9,
-    reviews: 234,
-    experiencesCount: 4,
-    description: "Plongez dans la magie du Maroc",
-    longDescription:
-      "Découvrez le Maroc authentique à travers 4 expériences uniques avec des hôtes locaux passionnés. De l'atelier poterie dans la médina aux cours de cuisine traditionnelle, en passant par une balade guidée dans les souks et un thé chez l'habitant, cette box vous offre une immersion complète dans la culture marocaine.",
-  },
-  "japon-zen": {
-    name: "Box Japon Zen",
-    country: "Japon",
-    flag: "🇯🇵",
-    image: "/japan-kyoto-zen-garden-temple-peaceful.jpg",
-    rating: 5.0,
-    reviews: 187,
-    experiencesCount: 5,
-    description: "L'art de vivre japonais",
-    longDescription:
-      "Plongez dans la sérénité japonaise avec 5 expériences soigneusement sélectionnées. Cérémonie du thé, calligraphie, cuisine kaiseki, méditation zen et ikebana vous attendent pour une immersion totale dans l'art de vivre nippon.",
-  },
-}
-
-const defaultBox = {
+const defaultBox: BoxData = {
+  id: "default",
   name: "Box GOYAGE",
   country: "Destination",
   flag: "🌍",
@@ -51,6 +13,10 @@ const defaultBox = {
   description: "Une aventure authentique",
   longDescription:
     "Découvrez une destination à travers les yeux des locaux avec plusieurs expériences uniques incluses dans cette box.",
+  price: 149,
+  originalPrice: 189,
+  experiences: [],
+  hosts: [],
 }
 
 export function BoxDetailHero({ boxId }: { boxId: string }) {

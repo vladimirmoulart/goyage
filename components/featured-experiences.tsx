@@ -4,7 +4,7 @@ import { Star, Clock, Users, Heart, ArrowRight, MapPin, CalendarDays } from "luc
 
 const experiences = [
   {
-    id: 1,
+    id: "1",
     title: "Atelier poterie traditionnelle",
     location: "Marrakech, Maroc",
     flag: "🇲🇦",
@@ -21,7 +21,7 @@ const experiences = [
     category: "Artisanat",
   },
   {
-    id: 2,
+    id: "2",
     title: "Randonnée et pique-nique local",
     location: "Cinque Terre, Italie",
     flag: "🇮🇹",
@@ -38,7 +38,7 @@ const experiences = [
     category: "Nature",
   },
   {
-    id: 3,
+    id: "4",
     title: "Tapas & marché de la Boqueria",
     location: "Barcelone, Espagne",
     flag: "🇪🇸",
@@ -55,7 +55,7 @@ const experiences = [
     category: "Gastronomie",
   },
   {
-    id: 4,
+    id: "6",
     title: "Snorkeling tortues & coraux",
     location: "Praslin, Seychelles",
     flag: "🇸🇨",
@@ -96,8 +96,9 @@ export function FeaturedExperiences() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {experiences.map((exp) => (
-            <div
+            <Link
               key={exp.id}
+              href={`/activites/${exp.id}`}
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* Image */}
@@ -164,7 +165,7 @@ export function FeaturedExperiences() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

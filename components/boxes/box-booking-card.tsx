@@ -3,13 +3,17 @@
 import { useState } from "react"
 import { Gift, Calendar, CreditCard, Shield, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { boxesData } from "@/lib/boxes"
 
-export function BoxBookingCard() {
+export function BoxBookingCard({ boxId }: { boxId: string }) {
   const [isGift, setIsGift] = useState(false)
   const [quantity, setQuantity] = useState(1)
 
-  const basePrice = 149
-  const originalPrice = 189
+  const box = boxesData[boxId]
+  const basePrice = box?.price ?? 149
+  const originalPrice = box?.originalPrice ?? 189
+  const discount =
+    originalPrice > basePrice ? Math.round((1 - basePrice / originalPrice) * 100) : null
 
   return (
     <div className="sticky top-24">
@@ -17,8 +21,14 @@ export function BoxBookingCard() {
         {/* Price */}
         <div className="flex items-baseline gap-3 mb-6">
           <span className="text-3xl font-bold text-coral">{basePrice}€</span>
-          <span className="text-lg text-foreground/50 line-through">{originalPrice}€</span>
-          <span className="bg-green/20 text-green text-sm font-semibold px-2 py-1 rounded-full">-21%</span>
+          {discount && (
+            <>
+              <span className="text-lg text-foreground/50 line-through">{originalPrice}€</span>
+              <span className="bg-green/20 text-green text-sm font-semibold px-2 py-1 rounded-full">
+                -{discount}%
+              </span>
+            </>
+          )}
         </div>
 
         {/* Gift toggle */}

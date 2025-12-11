@@ -1,46 +1,16 @@
 import { Star, Award } from "lucide-react"
+import { boxesData } from "@/lib/boxes"
 
-const hosts = [
-  {
-    id: 1,
-    name: "Ahmed",
-    role: "Maître potier",
-    image: "/placeholder.svg?height=200&width=200",
-    rating: 4.9,
-    reviews: 127,
-    experience: "15 ans",
-    bio: "Potier depuis 3 générations, Ahmed perpétue la tradition familiale dans son atelier de la médina.",
-    languages: ["Français", "Arabe", "Anglais"],
-  },
-  {
-    id: 2,
-    name: "Fatima",
-    role: "Cheffe cuisinière",
-    image: "/placeholder.svg?height=200&width=200",
-    rating: 5.0,
-    reviews: 89,
-    experience: "20 ans",
-    bio: "Fatima partage les secrets de la cuisine marocaine transmis par sa grand-mère.",
-    languages: ["Français", "Arabe"],
-  },
-  {
-    id: 3,
-    name: "Youssef",
-    role: "Guide local",
-    image: "/placeholder.svg?height=200&width=200",
-    rating: 4.8,
-    reviews: 156,
-    experience: "10 ans",
-    bio: "Né et grandi dans la médina, Youssef connaît chaque ruelle et chaque artisan.",
-    languages: ["Français", "Arabe", "Anglais", "Espagnol"],
-  },
-]
+export function BoxHosts({ boxId }: { boxId: string }) {
+  const hosts = boxesData[boxId]?.hosts ?? []
 
-export function BoxHosts() {
   return (
     <section>
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Vos hôtes locaux</h2>
 
+      {hosts.length === 0 ? (
+        <p className="text-foreground/70">Les hôtes seront annoncés prochainement.</p>
+      ) : (
       <div className="grid md:grid-cols-3 gap-6">
         {hosts.map((host) => (
           <div
@@ -76,6 +46,7 @@ export function BoxHosts() {
           </div>
         ))}
       </div>
+      )}
     </section>
   )
 }

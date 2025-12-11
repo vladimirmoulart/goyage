@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const faqs = [
   {
@@ -36,9 +37,23 @@ export function BoxFaq() {
 
   return (
     <section>
-      <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Questions fréquentes</h2>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Questions fréquentes</h2>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Button asChild className="bg-white text-coral hover:bg-white/90 rounded-full px-6 py-3">
+            <a href="#box-faq-questions">
+              Explorer les questions
+            </a>
+          </Button>
+          <Button asChild variant="outline" className="border-white/50 text-white hover:bg-white/10 rounded-full px-6 py-3">
+            <a href="mailto:hello@goyage.com">
+              Contacter l&apos;équipe
+            </a>
+          </Button>
+        </div>
+      </div>
 
-      <div className="space-y-4">
+      <div id="box-faq-questions" className="space-y-4">
         {faqs.map((faq, index) => (
           <div key={index} className="bg-white rounded-2xl overflow-hidden">
             <button

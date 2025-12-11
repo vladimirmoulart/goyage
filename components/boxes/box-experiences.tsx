@@ -1,73 +1,21 @@
-import { Clock, Users, MapPin, Star } from "lucide-react"
+import { Clock, MapPin, Star } from "lucide-react"
+import { boxesData } from "@/lib/boxes"
 
-const experiences = [
-  {
-    id: 1,
-    title: "Atelier poterie traditionnelle",
-    description:
-      "Apprenez l'art ancestral de la poterie marocaine avec un maître artisan dans son atelier de la médina. Repartez avec votre création.",
-    image: "/placeholder.svg?height=300&width=400",
-    duration: "3h",
-    maxGuests: 6,
-    bookedGuests: 3,
-    location: "Médina de Marrakech",
-    host: "Ahmed",
-    hostImage: "/placeholder.svg?height=100&width=100",
-    rating: 4.9,
-  },
-  {
-    id: 2,
-    title: "Cours de cuisine marocaine",
-    description:
-      "Préparez un tajine authentique et d'autres spécialités marocaines avec une famille locale. Déjeuner inclus avec votre création.",
-    image: "/placeholder.svg?height=300&width=400",
-    duration: "4h",
-    maxGuests: 8,
-    bookedGuests: 5,
-    location: "Riad familial",
-    host: "Fatima",
-    hostImage: "/placeholder.svg?height=100&width=100",
-    rating: 5.0,
-  },
-  {
-    id: 3,
-    title: "Balade guidée dans les souks",
-    description:
-      "Explorez les souks labyrinthiques avec un guide local. Découvrez les secrets des artisans et les meilleures adresses cachées.",
-    image: "/placeholder.svg?height=300&width=400",
-    duration: "2h30",
-    maxGuests: 10,
-    bookedGuests: 7,
-    location: "Souks de Marrakech",
-    host: "Youssef",
-    hostImage: "/placeholder.svg?height=100&width=100",
-    rating: 4.8,
-  },
-  {
-    id: 4,
-    title: "Thé et pâtisseries chez l'habitant",
-    description:
-      "Partagez un moment de convivialité autour du thé à la menthe et de pâtisseries maison chez une famille marocaine.",
-    image: "/placeholder.svg?height=300&width=400",
-    duration: "1h30",
-    maxGuests: 6,
-    bookedGuests: 2,
-    location: "Maison traditionnelle",
-    host: "Khadija",
-    hostImage: "/placeholder.svg?height=100&width=100",
-    rating: 5.0,
-  },
-]
+export function BoxExperiences({ boxId }: { boxId: string }) {
+  const box = boxesData[boxId]
+  const experiences = box?.experiences ?? []
 
-export function BoxExperiences() {
   return (
     <section>
       <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
         Les {experiences.length} expériences incluses
       </h2>
 
-      <div className="space-y-6">
-        {experiences.map((exp, index) => (
+      {experiences.length === 0 ? (
+        <p className="text-foreground/70">Les expériences seront annoncées bientôt.</p>
+      ) : (
+        <div className="space-y-6">
+          {experiences.map((exp, index) => (
           <div
             key={exp.id}
             className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
@@ -112,10 +60,6 @@ export function BoxExperiences() {
                     {exp.duration}
                   </span>
                   <span className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    {exp.bookedGuests}/{exp.maxGuests} personnes
-                  </span>
-                  <span className="flex items-center gap-1">
                     <MapPin className="w-4 h-4" />
                     {exp.location}
                   </span>
@@ -124,7 +68,8 @@ export function BoxExperiences() {
             </div>
           </div>
         ))}
-      </div>
+        </div>
+      )}
     </section>
   )
 }

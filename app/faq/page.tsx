@@ -122,14 +122,18 @@ export default function FaqPage() {
             Trouvez rapidement l’information qu’il vous faut ou contactez notre équipe, disponible 7j/7.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-            <Button className="rounded-full bg-coral hover:bg-coral/90 px-8 py-6 text-lg font-semibold">
-              Explorer les questions
+            <Button
+              asChild
+              className="rounded-full bg-coral hover:bg-coral/90 px-8 py-6 text-lg font-semibold"
+            >
+              <a href="#faq-sections">Explorer les questions</a>
             </Button>
             <Button
+              asChild
               variant="outline"
               className="rounded-full border-coral text-coral hover:bg-coral hover:text-white px-8 py-6 text-lg font-semibold bg-transparent"
             >
-              Contacter l’équipe
+              <a href="mailto:hello@goyage.com">Contacter l’équipe</a>
             </Button>
           </div>
           <div className="mt-10 grid sm:grid-cols-3 gap-4 text-left">
@@ -151,7 +155,7 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section id="faq-sections" className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {faqSections.map((section) => (
             <div key={section.title} className="bg-white rounded-3xl p-6 md:p-10 border border-pink/40 shadow-sm">
