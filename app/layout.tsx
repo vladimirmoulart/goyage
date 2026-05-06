@@ -1,14 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ChatWidget } from "@/components/chat/chat-widget"
 import "./globals.css"
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-})
 
 export const metadata: Metadata = {
   title: "GOYAGE - Voyagez autrement, vivez vraiment",
@@ -24,10 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`font-sans antialiased ${poppins.className}`}>
+      <body className="font-sans antialiased">
         {children}
         <ChatWidget />
-        <Analytics />
+        {process.env.NODE_ENV === "production" ? <Analytics /> : null}
       </body>
     </html>
   )
