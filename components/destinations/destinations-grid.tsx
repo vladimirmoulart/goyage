@@ -2,12 +2,12 @@ import Link from "next/link"
 import { MapPin, Users, Star } from "lucide-react"
 import { destinationDetailData } from "@/lib/destinations"
 
-const featuredDestinations = ["seychelles", "maroc", "bali", "italie", "espagne"] as const
+const featuredDestinations = ["espagne"] as const
 const destinations = featuredDestinations.map((id) => destinationDetailData[id])
 
 export function DestinationsGrid() {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <div className="grid md:grid-cols-[minmax(0,520px)] gap-6">
       {destinations.map((destination) => (
         <Link
           key={destination.id}

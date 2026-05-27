@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
 const mapPins = [
-  { label: "Marrakech", top: "35%", left: "40%" },
-  { label: "Lisbonne", top: "30%", left: "30%" },
-  { label: "Kyoto", top: "35%", left: "70%" },
-  { label: "Bali", top: "55%", left: "75%" },
+  { label: "Séville", top: "58%", left: "42%" },
+  { label: "Barcelone", top: "34%", left: "64%" },
+  { label: "Andalousie", top: "66%", left: "38%" },
+  { label: "Catalogne", top: "30%", left: "61%" },
 ]
 
 export default function DestinationsHero() {
@@ -20,17 +20,17 @@ export default function DestinationsHero() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="inline-flex items-center gap-2 bg-coral/10 text-coral px-4 py-2 rounded-full mb-6">
           <MapPin className="w-5 h-5" />
-          <span className="font-medium">150+ destinations vérifiées</span>
+          <span className="font-medium">Espagne</span>
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-          Explorez les destinations <span className="text-coral">GOYAGE</span>
+          Explorez l'Espagne avec <span className="text-coral">GOYAGE</span>
         </h1>
         <p className="mt-4 text-lg md:text-xl text-foreground/70">
-          Des expériences authentiques partout dans le monde, sélectionnées par nos équipes locales.
+          Découvrez Séville, Barcelone, l'Andalousie et la Catalogne à travers des expériences locales authentiques.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
           <Button asChild className="rounded-full px-8 py-6 text-lg font-semibold bg-coral hover:bg-coral/90">
-            <a href="#destinations-grid">Découvrir les régions</a>
+            <a href="#destinations-grid">Voir la destination</a>
           </Button>
           <Dialog open={isMapOpen} onOpenChange={setIsMapOpen}>
             <DialogTrigger asChild>
@@ -39,12 +39,12 @@ export default function DestinationsHero() {
                 className="rounded-full px-8 py-6 text-lg font-semibold border-coral text-coral hover:bg-coral hover:text-white bg-transparent"
               >
                 <Globe2 className="w-5 h-5 mr-2" />
-                Voir la carte
+                Voir les régions
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-3xl">
               <DialogHeader>
-                <DialogTitle>Carte des régions GOYAGE</DialogTitle>
+                <DialogTitle>Régions en Espagne</DialogTitle>
               </DialogHeader>
               <div className="relative h-80 rounded-2xl bg-gradient-to-br from-cream via-white to-pink/30 overflow-hidden border border-pink/30">
                 <div className="absolute inset-6 border border-pink/30 rounded-[40%] opacity-60" />

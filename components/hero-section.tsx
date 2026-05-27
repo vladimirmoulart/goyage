@@ -1,7 +1,31 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Search, MapPin, Calendar, Users } from "lucide-react"
+import { Search, Clock, Users, Compass } from "lucide-react"
 import { HeroVisual } from "@/components/hero-visual"
+
+const guidedSearch = [
+  {
+    label: "Ville / région",
+    icon: Compass,
+    options: ["Séville", "Barcelone", "Andalousie", "Catalogne"],
+  },
+  {
+    label: "Type d'expérience",
+    icon: Search,
+    options: ["Gastronomie", "Culture", "Nature", "Bien-être"],
+  },
+  {
+    label: "Durée",
+    icon: Clock,
+    options: ["Moins de 2h", "2h à 4h", "Demi-journée", "Journée complète"],
+  },
+  {
+    label: "Profil voyageur",
+    icon: Users,
+    options: ["Solo", "Couple", "Famille", "Groupe d'amis"],
+  },
+]
+
 export function HeroSection() {
   return (
     <section className="relative pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
@@ -71,47 +95,35 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Search Bar */}
-        <div className="mt-10 lg:mt-16 bg-white rounded-2xl shadow-xl p-4 md:p-6 max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-4">
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-cream/50">
-              <MapPin className="w-5 h-5 text-coral" />
-              <div>
-                <p className="text-xs text-foreground/60 font-medium">Où</p>
-                <input
-                  type="text"
-                  placeholder="Destination"
-                  className="bg-transparent text-foreground placeholder:text-foreground/50 outline-none w-full"
-                />
-              </div>
-            </div>
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-cream/50">
-              <Calendar className="w-5 h-5 text-coral" />
-              <div>
-                <p className="text-xs text-foreground/60 font-medium">Quand</p>
-                <input
-                  type="text"
-                  placeholder="Dates"
-                  className="bg-transparent text-foreground placeholder:text-foreground/50 outline-none w-full"
-                />
-              </div>
-            </div>
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-cream/50">
-              <Users className="w-5 h-5 text-coral" />
-              <div>
-                <p className="text-xs text-foreground/60 font-medium">Qui</p>
-                <input
-                  type="text"
-                  placeholder="Voyageurs"
-                  className="bg-transparent text-foreground placeholder:text-foreground/50 outline-none w-full"
-                />
-              </div>
-            </div>
-            <Button className="bg-coral hover:bg-coral/90 text-white rounded-xl h-full min-h-[56px] text-lg font-semibold">
-              <Search className="w-5 h-5 mr-2" />
-              Rechercher
-            </Button>
+        {/* Guided Search */}
+        <div className="mt-10 lg:mt-16 bg-white rounded-2xl shadow-xl p-4 md:p-6 max-w-6xl mx-auto">
+          <div className="mb-5">
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">Trouvez une expérience en Espagne</h2>
           </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {guidedSearch.map((field) => {
+              const Icon = field.icon
+              return (
+                <label key={field.label} className="flex items-center gap-3 p-3 rounded-xl bg-cream/50">
+                  <Icon className="w-5 h-5 text-coral shrink-0" />
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-xs text-foreground/60 font-medium">{field.label}</span>
+                    <select className="mt-1 w-full bg-transparent text-foreground outline-none text-sm font-semibold">
+                      {field.options.map((option) => (
+                        <option key={option}>{option}</option>
+                      ))}
+                    </select>
+                  </span>
+                </label>
+              )
+            })}
+          </div>
+          <Button asChild className="mt-4 w-full bg-coral hover:bg-coral/90 text-white rounded-xl min-h-[56px] text-lg font-semibold">
+            <Link href="/activites?destination=espagne">
+              <Search className="w-5 h-5 mr-2" />
+              Voir les expériences disponibles
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

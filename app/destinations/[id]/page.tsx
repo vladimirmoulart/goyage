@@ -9,7 +9,7 @@ import { destinationDetailData } from "@/lib/destinations"
 
 export default async function DestinationDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const destination = destinationDetailData[id] || destinationDetailData.maroc
+  const destination = destinationDetailData[id] || destinationDetailData.espagne
 
   return (
     <main className="min-h-screen bg-cream">

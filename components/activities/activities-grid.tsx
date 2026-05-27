@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Star, Clock, Users, Heart, MapPin, ChevronDown, CalendarDays } from "lucide-react"
 import { activitiesData } from "@/lib/activities"
 
-const activities = Object.values(activitiesData)
+const activities = Object.values(activitiesData).filter((activity) => activity.location.includes("Espagne"))
 
 export function ActivitiesGrid() {
   return (

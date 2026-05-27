@@ -3,14 +3,16 @@ import { Gift, MapPin, Star, Check, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { boxesList } from "@/lib/boxes"
 
+const pilotBoxes = boxesList.filter((box) => box.country === "Espagne")
+
 export function BoxesGrid() {
   return (
     <section id="boxes-destinations" className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Nos Box par Destination</h2>
-            <p className="text-foreground/70 mt-2">{boxesList.length} coffrets disponibles</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Box Espagne</h2>
+            <p className="text-foreground/70 mt-2">{pilotBoxes.length} coffret disponible</p>
           </div>
           <div className="relative w-full sm:w-auto">
             <select className="w-full appearance-none px-5 py-3 rounded-full border border-pink text-foreground text-sm bg-white outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 pr-10">
@@ -24,7 +26,7 @@ export function BoxesGrid() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {boxesList.map((box) => (
+          {pilotBoxes.map((box) => (
             <Link
               key={box.id}
               href={`/boxes/${box.id}`}

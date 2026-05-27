@@ -17,7 +17,7 @@ const quickQuestions = [
 
 const quickAnswers: Record<string, string> = {
   "quelles destinations sont disponibles ?":
-    "Nous nous concentrons actuellement sur 5 destinations : Maroc, Italie, Bali, Espagne et Seychelles. Chaque page destination regroupe les expériences correspondantes.",
+    "GOYAGE propose actuellement l’Espagne, avec des premières expériences à Séville, Barcelone, en Andalousie et en Catalogne.",
   "comment fonctionne une box goyage ?":
     "Chaque Box inclut plusieurs expériences vérifiées + un accès 18 mois. Choisissez la box, recevez votre coffret (digital ou physique) et réservez vos activités via votre espace GOYAGE.",
   "puis-je offrir une activité ?":

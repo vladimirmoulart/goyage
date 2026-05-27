@@ -9,9 +9,9 @@ const reviews = [
     date: "Novembre 2024",
     title: "Un cadeau inoubliable !",
     content:
-      "J'ai offert cette box à mes parents pour leurs 30 ans de mariage. Ils sont revenus enchantés du Maroc avec des souvenirs plein la tête. L'atelier poterie avec Ahmed était leur moment préféré. Merci GOYAGE !",
+      "J'ai offert cette box à mes parents pour leurs 30 ans de mariage. Ils sont revenus enchantés d'Espagne avec des souvenirs plein la tête. L'atelier tapas avec Javier était leur moment préféré. Merci GOYAGE !",
     helpful: 24,
-    experience: "Box Maroc Authentique",
+    experience: "Box Espagne Vibrante",
   },
   {
     id: 2,
@@ -21,9 +21,9 @@ const reviews = [
     date: "Octobre 2024",
     title: "Des rencontres authentiques",
     content:
-      "On cherchait à sortir des sentiers battus pour notre voyage au Maroc. Cette box nous a permis de vraiment rencontrer des locaux passionnés. Le thé chez Khadija restera un de nos plus beaux souvenirs de voyage.",
+      "On cherchait à sortir des sentiers battus pour notre voyage en Espagne. Cette box nous a permis de vraiment rencontrer des locaux passionnés. Le cours de flamenco à Séville restera un de nos plus beaux souvenirs de voyage.",
     helpful: 18,
-    experience: "Box Maroc Authentique",
+    experience: "Box Espagne Vibrante",
   },
   {
     id: 3,
@@ -33,9 +33,9 @@ const reviews = [
     date: "Septembre 2024",
     title: "Très bonne expérience",
     content:
-      "Excellentes activités et hôtes très accueillants. Seul petit bémol : la flexibilité des dates était un peu limitée en haute saison. Mais globalement une très belle découverte du Maroc authentique.",
+      "Excellentes activités et hôtes très accueillants. Seul petit bémol : la flexibilité des dates était un peu limitée en haute saison. Mais globalement une très belle découverte de l'Espagne locale.",
     helpful: 12,
-    experience: "Box Maroc Authentique",
+    experience: "Box Espagne Vibrante",
   },
 ]
 

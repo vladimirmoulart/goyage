@@ -71,14 +71,14 @@ export function BoxesGiftSection() {
 
                 <div className="bg-cream rounded-xl p-4 text-center">
                   <p className="text-foreground/70 italic">
-                    "Pour votre voyage de noces, vivez des moments magiques au Japon !"
+                    "Pour votre prochain séjour, vivez l'Espagne à travers ses habitants !"
                   </p>
                   <p className="text-coral font-semibold mt-2">- De la part de vos amis</p>
                 </div>
 
                 <div className="flex items-center justify-between pt-4 border-t border-pink/30">
-                  <span className="text-foreground/60">Box Japon Zen</span>
-                  <span className="text-2xl font-bold text-coral">199€</span>
+                  <span className="text-foreground/60">Box Espagne Vibrante</span>
+                  <span className="text-2xl font-bold text-coral">169€</span>
                 </div>
               </div>
             </div>

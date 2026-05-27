@@ -28,7 +28,7 @@ export function HeroVisual() {
               <img src="/friendly-woman-portrait-smiling.jpg" alt="Maria" className="w-12 h-12 rounded-full object-cover" />
               <div className="flex-1">
                 <p className="font-semibold text-foreground">Cours de cuisine avec Maria</p>
-                <p className="text-sm text-foreground/70">Lisbonne, Portugal</p>
+                <p className="text-sm text-foreground/70">Barcelone, Espagne</p>
               </div>
               <div className="text-right">
                 <p className="font-bold text-coral">45€</p>

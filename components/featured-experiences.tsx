@@ -1,77 +1,9 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Star, Clock, Users, Heart, ArrowRight, MapPin, CalendarDays } from "lucide-react"
+import { activitiesData } from "@/lib/activities"
 
-const experiences = [
-  {
-    id: "1",
-    title: "Atelier poterie traditionnelle",
-    location: "Marrakech, Maroc",
-    flag: "🇲🇦",
-    host: "Ahmed",
-    hostImage: "/moroccan-man-artisan-smiling-portrait.jpg",
-    image: "/pottery-workshop-morocco-traditional-crafts.jpg",
-    price: 35,
-    rating: 4.9,
-    reviews: 127,
-    duration: "3h",
-    maxGuests: 6,
-    bookedGuests: 3,
-    date: "Samedi 18 mai",
-    category: "Artisanat",
-  },
-  {
-    id: "2",
-    title: "Randonnée et pique-nique local",
-    location: "Cinque Terre, Italie",
-    flag: "🇮🇹",
-    host: "Lucia",
-    hostImage: "/italian-woman-hiking-guide-smiling.jpg",
-    image: "/hiking-cinque-terre-italy-coastal-view-picnic.jpg",
-    price: 55,
-    rating: 4.8,
-    reviews: 89,
-    duration: "5h",
-    maxGuests: 8,
-    bookedGuests: 5,
-    date: "Dimanche 19 mai",
-    category: "Nature",
-  },
-  {
-    id: "4",
-    title: "Tapas & marché de la Boqueria",
-    location: "Barcelone, Espagne",
-    flag: "🇪🇸",
-    host: "Javier",
-    hostImage: "/german-man-backpacker-smiling-portrait.jpg",
-    image: "/happy-travelers-sharing-meal-with-local-host-famil.jpg",
-    price: 48,
-    rating: 4.8,
-    reviews: 168,
-    duration: "3h30",
-    maxGuests: 10,
-    bookedGuests: 4,
-    date: "Jeudi 23 mai",
-    category: "Gastronomie",
-  },
-  {
-    id: "6",
-    title: "Snorkeling tortues & coraux",
-    location: "Praslin, Seychelles",
-    flag: "🇸🇨",
-    host: "Aline",
-    hostImage: "/friendly-woman-portrait-smiling.jpg",
-    image: "/tortue.png",
-    price: 75,
-    rating: 4.9,
-    reviews: 101,
-    duration: "3h30",
-    maxGuests: 6,
-    bookedGuests: 2,
-    date: "Lundi 27 mai",
-    category: "Nature",
-  },
-]
+const experiences = ["3", "4"].map((id) => activitiesData[id])
 
 export function FeaturedExperiences() {
   return (
@@ -80,7 +12,9 @@ export function FeaturedExperiences() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">Expériences populaires</h2>
-            <p className="mt-3 text-lg text-foreground/70">Des moments uniques sélectionnés par notre communauté.</p>
+            <p className="mt-3 text-lg text-foreground/70">
+              Des expériences locales en Espagne, sélectionnées pour vivre le pays autrement.
+            </p>
           </div>
           <Button
             asChild
@@ -94,7 +28,7 @@ export function FeaturedExperiences() {
           </Button>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl">
           {experiences.map((exp) => (
             <Link
               key={exp.id}

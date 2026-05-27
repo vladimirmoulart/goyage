@@ -3,34 +3,28 @@ import { ArrowRight } from "lucide-react"
 
 const regions = [
   {
-    name: "Immersion au Maroc",
-    countries: ["Marrakech", "Atlas", "Désert d'Agafay"],
-    image: "/maroc.png",
+    name: "Séville culturelle",
+    countries: ["Flamenco", "Tablaos", "Artisanat"],
+    image: "/travel-experience-adventure-colorful.jpg",
     color: "from-coral/80",
   },
   {
-    name: "Escapades en Italie",
-    countries: ["Cinque Terre", "Toscane", "Pouilles"],
-    image: "/cinque-terre-italy-colorful-coastal-villages.jpg",
+    name: "Barcelone gourmande",
+    countries: ["Boqueria", "Tapas", "Vermouth"],
+    image: "/happy-travelers-sharing-meal-with-local-host-famil.jpg",
     color: "from-green/80",
   },
   {
-    name: "Dolce farniente en Espagne",
-    countries: ["Séville", "Barcelone", "Baléares"],
+    name: "Côte méditerranéenne",
+    countries: ["Balade", "Mer", "Villages"],
     image: "/mediterranean-sea-coastal-village-sunset.jpg",
     color: "from-coral/80",
   },
   {
-    name: "Retraites à Bali",
-    countries: ["Ubud", "Canggu", "Uluwatu"],
-    image: "/bali-rice-terraces-temple-spiritual.jpg",
+    name: "Andalousie locale",
+    countries: ["Marchés", "Familles", "Traditions"],
+    image: "/gift-box-travel-experience-colorful.jpg",
     color: "from-green/80",
-  },
-  {
-    name: "Îles des Seychelles",
-    countries: ["Mahé", "Praslin", "La Digue"],
-    image: "/seychelles.png",
-    color: "from-coral/80",
   },
 ]
 
@@ -40,9 +34,9 @@ export function PopularRegions() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Régions populaires</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Régions populaires en Espagne</h2>
             <p className="mt-3 text-lg text-foreground/70">
-              Explorez nos destinations par région et trouvez votre prochaine aventure.
+              Des villes et régions choisies pour proposer des expériences réellement disponibles.
             </p>
           </div>
         </div>

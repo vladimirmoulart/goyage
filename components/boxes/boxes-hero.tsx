@@ -17,8 +17,7 @@ export function BoxesHero() {
           </h1>
 
           <p className="text-lg md:text-xl text-foreground/70 mb-8 leading-relaxed">
-            Découvrez nos coffrets cadeaux par destination. Chaque box contient plusieurs expériences authentiques à
-            vivre avec des hôtes locaux. Le cadeau parfait pour les amoureux du voyage.
+            Des expériences authentiques en Espagne, réunies dans une box simple à offrir et facile à réserver.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -47,27 +46,27 @@ export function BoxesHero() {
         {/* Floating boxes preview */}
         <div className="mt-16 grid grid-cols-3 gap-4 max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl p-4 shadow-lg transform -rotate-3 hover:rotate-0 transition-transform">
-            <img src="/maroc.png" alt="Box Maroc" className="w-full h-32 object-cover rounded-xl mb-3" />
-            <p className="font-semibold text-foreground text-sm">Box Maroc</p>
-            <p className="text-coral font-bold">149€</p>
+            <img src="/travel-experience-adventure-colorful.jpg" alt="Flamenco à Séville" className="w-full h-32 object-cover rounded-xl mb-3" />
+            <p className="font-semibold text-foreground text-sm">Séville</p>
+            <p className="text-coral font-bold">Flamenco</p>
           </div>
           <div className="bg-white rounded-2xl p-4 shadow-xl transform scale-105 z-10">
             <img
-              src="/japan-travel-box-gift-elegant.jpg"
-              alt="Box Japon"
+              src="/happy-travelers-sharing-meal-with-local-host-famil.jpg"
+              alt="Tapas à Barcelone"
               className="w-full h-32 object-cover rounded-xl mb-3"
             />
-            <p className="font-semibold text-foreground text-sm">Box Japon</p>
-            <p className="text-coral font-bold">199€</p>
+            <p className="font-semibold text-foreground text-sm">Barcelone</p>
+            <p className="text-coral font-bold">Tapas</p>
           </div>
           <div className="bg-white rounded-2xl p-4 shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
             <img
-              src="/italy-travel-box-gift-romantic.jpg"
-              alt="Box Italie"
+              src="/mediterranean-sea-coastal-village-sunset.jpg"
+              alt="Côte méditerranéenne espagnole"
               className="w-full h-32 object-cover rounded-xl mb-3"
             />
-            <p className="font-semibold text-foreground text-sm">Box Italie</p>
-            <p className="text-coral font-bold">179€</p>
+            <p className="font-semibold text-foreground text-sm">Méditerranée</p>
+            <p className="text-coral font-bold">Balade</p>
           </div>
         </div>
       </div>

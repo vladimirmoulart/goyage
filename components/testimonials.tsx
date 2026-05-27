@@ -6,8 +6,8 @@ const testimonials = [
     name: "Sophie M.",
     location: "Paris, France",
     avatar: "/french-woman-traveler-smiling-portrait.jpg",
-    text: "GOYAGE a transformé ma façon de voyager. L'expérience avec Maria à Lisbonne était incroyable - bien plus qu'un simple cours de cuisine, c'était une vraie immersion culturelle.",
-    experience: "Cours de cuisine à Lisbonne",
+    text: "GOYAGE a transformé ma façon de voyager. L'expérience avec Maria à Barcelone était incroyable - bien plus qu'un simple cours de cuisine, c'était une vraie immersion culturelle.",
+    experience: "Cours de cuisine à Barcelone",
     rating: 5,
   },
   {
